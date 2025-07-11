@@ -8,7 +8,7 @@ net = cv2.dnn.readNetFromDarknet("ObjectrecognitionYlv3Tny/yolov3-tiny.cfg",
 # Ağın çıktı katmanlarının isimlerini al
 output_layers = net.getUnconnectedOutLayersNames()
 
-def yüz_tanima(image):
+def yuz_tanima(image):
     """Görüntüde yüz tespiti yapar ve tespit edilen yüzlerin koordinatlarını döndürür"""
     # Görüntünün yüksekliğini ve genişliğini al
     h, w = image.shape[:2]
@@ -74,7 +74,7 @@ def camera():
         if not ret: break
         frame=cv2.flip(frame,1)
         # Yüz tespiti yap
-        boxes = yüz_tanima(frame)
+        boxes = yuz_tanima(frame)
         # Tespit edilen yüzleri çiz
         sekil_cizme(frame, boxes)
         
